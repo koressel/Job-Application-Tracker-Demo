@@ -7,7 +7,7 @@ class Dashboard extends React.Component {
     super(props);
 
     this.state = {
-      data: [
+      applications: [
         {
           position: "Tech Lead",
           company: "Dr. Martens",
@@ -24,7 +24,7 @@ class Dashboard extends React.Component {
           date: "2021-04-16",
           filenames: "Resume.pdf, CoverLetter.pdf",
           applied: true,
-          response: true, 
+          response: false, 
           interview: true,
           notes: "- Finish online assessment"
         },
@@ -118,12 +118,11 @@ class Dashboard extends React.Component {
         </div>
       </form>
       
-      <Searchbar></Searchbar>
+      {/* <Searchbar></Searchbar>
       <CreateApplicationsModal></CreateApplicationsModal>
-      <EditApplicationsModal></EditApplicationsModal>
-      <Applications data={this.state.data}></Applications>
+      <EditApplicationsModal></EditApplicationsModal> */}
+      <Applications applications={this.state.applications}></Applications>
 
-     
     </div>
     )
   }
