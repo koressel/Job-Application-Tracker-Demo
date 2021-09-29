@@ -10,6 +10,7 @@ class Dashboard extends React.Component {
     this.state = {
       applications: [
         {
+          id: 1,
           position: "Tech Lead",
           company: "Dr. Martens",
           date: "2021-04-15",
@@ -20,6 +21,7 @@ class Dashboard extends React.Component {
           notes: ""
         },
         {
+          id: 2,
           position: "Software Engineer",
           company: "Comma.ai",
           date: "2021-04-16",
@@ -30,6 +32,7 @@ class Dashboard extends React.Component {
           notes: "- Finish online assessment"
         },
         {
+          id: 3,
           position: "Vulnerability Analyst",
           company: "YouTube",
           date: "2021-02-11",
@@ -40,21 +43,21 @@ class Dashboard extends React.Component {
           notes: ""
         }
       ],
+      currentApplication: {},
       newModalToggle: 'hidden',
-      editModalToggle: 'hidden'
+      editModalToggle: 'hidden',
     };
 
-    this.toggleEditModal = this.toggleEditModal.bind(this);
+    this.openEditModal = this.openEditModal.bind(this);
     this.closeEditModal = this.closeEditModal.bind(this);
   }
 
-  toggleEditModal() {
-    if (this.state.editModalToggle === 'hidden') {
-      this.setState({editModalToggle: 'show'})
-    }
-    else {
-      this.setState({editModalToggle: 'hidden'});
-    }
+  openEditModal(applicationId) {
+    const applicationData = this.state.applications.find(a => a.id == applicationId);
+      this.setState({
+        editModalToggle: 'show',
+        currentApplication: applicationData
+      });
   }
 
   closeEditModal() {
@@ -115,11 +118,13 @@ class Dashboard extends React.Component {
      */}
       <EditModal
         toggle={this.state.editModalToggle}
+        currentApplication={this.state.currentApplication}
+        applications={this.state.applications}
         closeEditModal={this.closeEditModal}
       ></EditModal> 
       <Applications 
           applications={this.state.applications}
-          toggleEditModal={this.toggleEditModal}
+          openEditModal={this.openEditModal}
       ></Applications>
 
     </div>

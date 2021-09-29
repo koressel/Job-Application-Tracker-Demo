@@ -8,7 +8,8 @@ class Applications extends React.Component {
     }
 
     handleEditButtonClick(e) {
-        this.props.toggleEditModal();
+        const applicationId = e.target.parentElement.getAttribute("data-id");
+        this.props.openEditModal(applicationId);
     }
 
   render() {
@@ -40,7 +41,7 @@ class Applications extends React.Component {
         <div id="flex-container">
             {apps.map((a, i) => {
                 return (
-                    <div className="applications" data-id="">
+                    <div className="applications" data-id={a.id}>
                     <h2>{a.position}</h2>
                     <p className="company">{a.company}</p>
                     <p className="date">
