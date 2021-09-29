@@ -1,6 +1,16 @@
 import React from "react";
 
 class Applications extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.handleEditButtonClick = this.handleEditButtonClick.bind(this);
+    }
+
+    handleEditButtonClick(e) {
+        this.props.toggleEditModal();
+    }
+
   render() {
       let apps = this.props.applications;
       apps.map((a, i) => {
@@ -26,7 +36,7 @@ class Applications extends React.Component {
         }
       });
       return (
-        <content id="applications-container">
+        <div id="applications-container">
         <div id="flex-container">
             {apps.map((a, i) => {
                 return (
@@ -53,13 +63,13 @@ class Applications extends React.Component {
                     <div className="notes-container">
                         <p>{a.notes}&nbsp;</p>
                     </div>
-                    <button id="open-edit-modal-btn" className="edit-application-btn">Edit</button>
+                    <button id="open-edit-modal-btn" className="edit-application-btn" onClick={this.handleEditButtonClick}>Edit</button>
                     </div>
                 )
             })}
             
         </div>
-      </content>
+      </div>
       )
   }
 }

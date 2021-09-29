@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Applications from './components/applications';
+import EditModal from './components/editmodal';
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -39,13 +40,24 @@ class Dashboard extends React.Component {
           notes: ""
         }
       ],
+      newModalToggle: 'hidden',
+      editModalToggle: 'hidden'
+    };
 
+    this.toggleEditModal = this.toggleEditModal.bind(this);
+  }
+
+  toggleEditModal() {
+    if (this.state.editModalToggle === 'hidden') {
+      this.setState({editModalToggle: 'show'})
+    }
+    else {
+      this.setState({editModalToggle: 'hidden'});
     }
   }
 
   render() {
   
-
     return (
       <div className="App">
       <header>
@@ -64,7 +76,7 @@ class Dashboard extends React.Component {
           <i className="fas fa-search"></i>
       </div>
       </header>
-      <form id="new-application-form" className="modal input-form outline" name="newApplicationForm" onSubmit="return false">
+      {/* <form id="new-application-form" className="modal input-form outline" name="newApplicationForm" onSubmit="return false">
         <div id="new-modal-content" className="modal-content">
           <button id="close-new-modal-btn" type="button">&times;</button>
           <h1>Create New</h1>
@@ -90,38 +102,19 @@ class Dashboard extends React.Component {
           <textarea id="new-notes" name="notes">THIS IS A TEST</textarea>
           <button id="new-submit-btn" type="submit">Create</button>
         </div>
-      </form>
-      <form id="edit-application-form" className="modal input-form outline" onSubmit="return false">
-        <div id="edit-modal-content" className="modal-content">
-          <button id="close-edit-modal-btn" type="button">&times;</button>
-          <h1>Edit</h1>
-          <hr/>
-          <label htmlFor="position">Position</label>
-          <span id="edit-id" className="hidden"></span>
-          <input type="text" id="edit-position" name="position"/>
-          <label htmlFor="company">Company</label>
-          <input type="text" id="edit-company" name="company"/>
-          <label htmlFor="date">Date</label>
-          <input type="date" id="edit-date" name="date"/>
-          <div className="status-container">
-              <input type="checkbox" className="status-cb"  id="edit-applied-status" name="applied-status" />
-            <label htmlFor="applied-status">Applied</label>
-              <input type="checkbox" className="status-cb"  id="edit-response-status" name="response-status"/>
-            <label htmlFor="response-status">Response</label>
-              <input type="checkbox" className="status-cb"  id="edit-interview-status" name="interview-status"/>
-            <label htmlFor="interview-status">Interview</label>
-          </div>
-          <label htmlFor="notes">Notes</label><br/>
-          <textarea id="edit-notes" name="notes"></textarea>
-          <button id="edit-submit-btn" type="submit">Save</button>
-          <button id="delete-btn" type="button">Delete</button>
-        </div>
-      </form>
+      </form> */}
+     
       
       {/* <Searchbar></Searchbar>
       <CreateApplicationsModal></CreateApplicationsModal>
-      <EditApplicationsModal></EditApplicationsModal> */}
-      <Applications applications={this.state.applications}></Applications>
+     */}
+      <EditModal
+        toggle={this.state.editModalToggle}
+      ></EditModal> 
+      <Applications 
+          applications={this.state.applications}
+          toggleEditModal={this.toggleEditModal}
+      ></Applications>
 
     </div>
     )
