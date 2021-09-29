@@ -12,28 +12,32 @@ class Applications extends React.Component {
         this.props.openEditModal(applicationId);
     }
 
+  // TODO - checkboxes need to be mapped to a different object 
   render() {
+      let applied = false;
+      let response = false;
+      let interview = false;
       let apps = this.props.applications;
       apps.map((a, i) => {
         if (a.applied) {
-            a.applied = <input type="checkbox" className="status-cb"  id="applied-status" name="applied-status" checked/>;
+            applied = <input type="checkbox" className="status-cb"  id="applied-status" name="applied-status" checked/>;
         }
         else {
-            a.applied = <input type="checkbox" className="status-cb"  id="applied-status" name="applied-status"/>;
+            applied = <input type="checkbox" className="status-cb"  id="applied-status" name="applied-status"/>;
         }
 
         if (a.response) {
-            a.response =   <input type="checkbox" className="status-cb"  id="response-status" name="response-status" checked/>;
+            response =   <input type="checkbox" className="status-cb"  id="response-status" name="response-status" checked/>;
         }
         else {
-            a.response = <input type="checkbox" className="status-cb"  id="response-status" name="response-status"/>;
+            response = <input type="checkbox" className="status-cb"  id="response-status" name="response-status"/>;
         }
 
         if (a.interview) {
-            a.interview =   <input type="checkbox" className="status-cb"  id="interview-status" name="interview-status" checked/>;
+            interview =   <input type="checkbox" className="status-cb"  id="interview-status" name="interview-status" checked/>;
         }
         else {
-            a.interview = <input type="checkbox" className="status-cb"  id="interview-status" name="interview-status"/>;
+            interview = <input type="checkbox" className="status-cb"  id="interview-status" name="interview-status"/>;
         }
       });
       return (
@@ -48,11 +52,11 @@ class Applications extends React.Component {
                         {a.date}<span className="sub-text">&nbsp;Date Applied</span>
                     </p>
                     <div className="status-container">
-                       {a.applied}
+                       {applied}
                         <label htmlFor="applied-status">Applied</label>
-                        {a.response}
+                        {response}
                         <label htmlFor="response-status">Response</label>
-                        {a.interview}
+                        {interview}
                         <label htmlFor="interview-status">Interview</label>
                     </div>
                     <div className="files-container">

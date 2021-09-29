@@ -11,11 +11,13 @@ class EditModal extends React.Component {
         this.props.closeEditModal();
     }
 
- // TODO: checkboxes are not displaying the right output and need to be fixed **
   render() {
-      let applied,response,interview = false;
+      let applied = false;
+      let response = false;
+      let interview = false;
       let apps = this.props.applications;
       apps.map((a, i) => {
+          console.log(a.applied)
         if (a.applied) {
             applied = <input type="checkbox" className="status-cb"  id="edit-applied-status" name="applied-status" checked />;
         }
