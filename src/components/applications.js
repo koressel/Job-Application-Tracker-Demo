@@ -20,24 +20,24 @@ class Applications extends React.Component {
       let apps = this.props.applications;
       apps.map((a, i) => {
         if (a.applied) {
-            applied = <input type="checkbox" className="status-cb"  id="applied-status" name="applied-status" checked/>;
+            a.appliedCheckbox = <input type="checkbox" className="status-cb"  id="applied-status" name="applied-status" checked/>;
         }
         else {
-            applied = <input type="checkbox" className="status-cb"  id="applied-status" name="applied-status"/>;
+            a.appliedCheckbox = <input type="checkbox" className="status-cb"  id="applied-status" name="applied-status"/>;
         }
 
         if (a.response) {
-            response =   <input type="checkbox" className="status-cb"  id="response-status" name="response-status" checked/>;
+            a.responseCheckbox =   <input type="checkbox" className="status-cb"  id="response-status" name="response-status" checked/>;
         }
         else {
-            response = <input type="checkbox" className="status-cb"  id="response-status" name="response-status"/>;
+            a.responseCheckbox = <input type="checkbox" className="status-cb"  id="response-status" name="response-status"/>;
         }
 
         if (a.interview) {
-            interview =   <input type="checkbox" className="status-cb"  id="interview-status" name="interview-status" checked/>;
+            a.interviewCheckbox =   <input type="checkbox" className="status-cb"  id="interview-status" name="interview-status" checked/>;
         }
         else {
-            interview = <input type="checkbox" className="status-cb"  id="interview-status" name="interview-status"/>;
+            a.interviewCheckbox = <input type="checkbox" className="status-cb"  id="interview-status" name="interview-status"/>;
         }
       });
       return (
@@ -52,11 +52,11 @@ class Applications extends React.Component {
                         {a.date}<span className="sub-text">&nbsp;Date Applied</span>
                     </p>
                     <div className="status-container">
-                       {applied}
+                       {a.appliedCheckbox}
                         <label htmlFor="applied-status">Applied</label>
-                        {response}
+                        {a.responseCheckbox}
                         <label htmlFor="response-status">Response</label>
-                        {interview}
+                        {a.interviewCheckbox}
                         <label htmlFor="interview-status">Interview</label>
                     </div>
                     <div className="files-container">
