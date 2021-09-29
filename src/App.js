@@ -45,6 +45,7 @@ class Dashboard extends React.Component {
     };
 
     this.toggleEditModal = this.toggleEditModal.bind(this);
+    this.closeEditModal = this.closeEditModal.bind(this);
   }
 
   toggleEditModal() {
@@ -54,6 +55,10 @@ class Dashboard extends React.Component {
     else {
       this.setState({editModalToggle: 'hidden'});
     }
+  }
+
+  closeEditModal() {
+    this.setState({editModalToggle: 'hidden'});
   }
 
   render() {
@@ -110,6 +115,7 @@ class Dashboard extends React.Component {
      */}
       <EditModal
         toggle={this.state.editModalToggle}
+        closeEditModal={this.closeEditModal}
       ></EditModal> 
       <Applications 
           applications={this.state.applications}

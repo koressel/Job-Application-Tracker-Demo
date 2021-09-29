@@ -3,13 +3,19 @@ import React from "react";
 class EditModal extends React.Component {
     constructor(props) {
         super(props);
+
+        this.handleCloseButtonClick = this.handleCloseButtonClick.bind(this);
+    }
+
+    handleCloseButtonClick(e) {
+        this.props.closeEditModal();
     }
 
   render() {
       return (
         <form id="edit-application-form" className={this.props.toggle + " modal input-form outline"} onSubmit="return false">
         <div id="edit-modal-content" className="modal-content">
-          <button id="close-edit-modal-btn" type="button">&times;</button>
+          <button id="close-edit-modal-btn" type="button" onClick={this.handleCloseButtonClick}>&times;</button>
           <h1>Edit</h1>
           <hr/>
           <label htmlFor="position">Position</label>
