@@ -8,30 +8,30 @@ class EditModal extends React.Component {
     }
 
     handleCloseButtonClick(e) {
-        this.props.closeEditModal();
+        this.props.closeModal('edit-modal');
     }
 
   render() {
       let app = this.props.currentApplication;
         if (app.applied) {
-            app.appliedCheckbox = <input type="checkbox" className="status-cb"  id="edit-applied-status" name="applied-status" checked onClick={(() => {return false;})} />;
+            app.appliedCheckbox = <input type="checkbox" className="status-cb"  id="edit-applied-status" name="applied-status" checked />;
         }
         else {
-            app.appliedCheckbox = <input type="checkbox" className="status-cb"  id="edit-applied-status" name="applied-status" onClick={(() => {return false;})} />
+            app.appliedCheckbox = <input type="checkbox" className="status-cb"  id="edit-applied-status" name="applied-status" />
         }
 
         if (app.response) {
-            app.responseCheckbox =  <input type="checkbox" className="status-cb"  id="edit-response-status" name="response-status" checked onClick={(() => {return false;})}  />
+            app.responseCheckbox =  <input type="checkbox" className="status-cb"  id="edit-response-status" name="response-status" checked  />
         }
         else {
-            app.responseCheckbox = <input type="checkbox" className="status-cb"  id="edit-response-status" name="response-status" onClick={(() => {return false;})} />
+            app.responseCheckbox = <input type="checkbox" className="status-cb"  id="edit-response-status" name="response-status" />
         }
 
         if (app.interview) {
-            app.interviewCheckbox =  <input type="checkbox" className="status-cb"  id="edit-interview-status" name="interview-status" checked onClick={(() => {return false;})} />
+            app.interviewCheckbox =  <input type="checkbox" className="status-cb"  id="edit-interview-status" name="interview-status" checked />
         }
         else {
-            app.interviewCheckbox =  <input type="checkbox" className="status-cb"  id="edit-interview-status" name="interview-status" onClick={(() => {return false;})} />
+            app.interviewCheckbox =  <input type="checkbox" className="status-cb"  id="edit-interview-status" name="interview-status" />
         }
 
       return (
