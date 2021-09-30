@@ -56,7 +56,7 @@ class EditModal extends React.Component {
             <label htmlFor="interview-status">Interview</label>
           </div>
           <label htmlFor="notes">Notes</label><br/>
-          <textarea id="edit-notes" name="notes">{this.props.currentApplication.notes}</textarea>
+          <textarea id="edit-notes" name="notes" value={this.props.currentApplication.notes}></textarea>
           <button id="edit-submit-btn" type="submit">Save</button>
           <button id="delete-btn" type="button">Delete</button>
         </div>
