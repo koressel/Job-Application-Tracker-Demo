@@ -12,7 +12,6 @@ class Applications extends React.Component {
         this.props.openEditModal(applicationId);
     }
 
-  // TODO - checkboxes need to be mapped to a different object 
   render() {
       let applied = false;
       let response = false;
