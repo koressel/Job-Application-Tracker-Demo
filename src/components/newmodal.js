@@ -12,7 +12,8 @@ class NewModal extends React.Component {
         e.preventDefault();
 
         let formData = new FormData(document.querySelector('#new-application-form'));
-        
+
+        // TODO: save form data
         console.log(formData.getAll("files"))
     }
 
