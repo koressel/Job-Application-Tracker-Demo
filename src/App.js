@@ -53,6 +53,7 @@ class Dashboard extends React.Component {
   }
 
   openEditModal(applicationId) {
+    // TODO: this breaks when using strict equality 
     const applicationData = this.state.applications.find(a => a.id == applicationId);
       this.setState({
         editModalToggle: 'show',
