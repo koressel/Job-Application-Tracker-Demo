@@ -51,6 +51,7 @@ class Dashboard extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.openNewModal = this.openNewModal.bind(this);
     this.openEditModal = this.openEditModal.bind(this);
+    this.createApplication = this.createApplication.bind(this);
   }
 
   openNewModal() {
@@ -77,6 +78,17 @@ class Dashboard extends React.Component {
     }
   }
 
+  createApplication(data) {
+    
+    const applications = this.state.applications;
+    // console.log(applications)
+    // applications.push(data);
+    // this.setState({
+    //   applications: applications
+    // })
+
+  }
+
   render() {
   
     return (
@@ -101,6 +113,7 @@ class Dashboard extends React.Component {
      <NewModal
         toggle={this.state.newModalToggle}
         closeModal={this.closeModal}
+        createApplication={this.createApplication}
      ></NewModal>
       <EditModal
         toggle={this.state.editModalToggle}

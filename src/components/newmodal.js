@@ -11,10 +11,47 @@ class NewModal extends React.Component {
     handleSubmitButtonClick(e) {
         e.preventDefault();
 
-        let formData = new FormData(document.querySelector('#new-application-form'));
+        const formData = new FormData(document.querySelector('#new-application-form'));
+        let data = {};
+        let appliedStatus, responseStatus, interviewStatus = false;
 
-        // TODO: save form data
-        console.log(formData.getAll("files"))
+        for(var pair of formData.entries()) {
+          switch(pair[0]) {
+            case 'applied':
+              pair[1] = true;
+              break;
+            case 'response':
+              pair[1] = true;
+              break;
+            case 'interview':
+              pair[1] = true;
+              break;
+          }
+          if (pair[0] === 'files') {
+            const fileList = formData.getAll('files');
+            if (!fileList) {
+              data[pair[0]] = "";
+            }
+            else {
+              data[pair[0]] = fileList;
+            }
+          }
+          else {
+            data[pair[0]] = pair[1];
+          }
+       }
+      
+       if (!data.applied) {
+         data.applied = false;
+       }
+       if (!data.response) {
+        data.response = false;
+      }
+      if (!data.interview) {
+        data.interview = false;
+      }
+       console.log(data)
+      //  this.props.createApplication(data);
     }
 
     handleCloseButtonClick(e) {
@@ -35,12 +72,12 @@ class NewModal extends React.Component {
           <label htmlFor="date">Date</label>
           <input type="date" id="new-date" name="date" value="2021-09-02"/>
           <div className="status-container">
-            <input type="checkbox" className="status-cb"  id="new-applied-status" name="applied-status" />
-            <label htmlFor="applied-status">Applied</label>
-            <input type="checkbox" className="status-cb"  id="new-response-status" name="response-status"/>
-            <label htmlFor="response-status">Response</label>
-            <input type="checkbox" className="status-cb"  id="new-interview-status" name="interview-status"/>
-            <label htmlFor="interview-status">Interview</label>
+            <input type="checkbox" className="status-cb"  id="new-applied-status" name="applied" />
+            <label htmlFor="applied">Applied</label>
+            <input type="checkbox" className="status-cb"  id="new-response-status" name="response"/>
+            <label htmlFor="response">Response</label>
+            <input type="checkbox" className="status-cb"  id="new-interview-status" name="interview"/>
+            <label htmlFor="interview">Interview</label>
         </div>
           <label htmlFor="files">Files</label>
           <input id="new-upload" type="file" name="files" multiple/>
