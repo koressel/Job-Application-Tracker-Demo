@@ -9,7 +9,7 @@ class EditModal extends React.Component {
     }
 
     handleDeleteButtonClick(e) {
-      
+      this.props.deleteApplication(this.props.currentApplication.id);
     }
 
     handleCloseButtonClick(e) {

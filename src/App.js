@@ -52,6 +52,7 @@ class Dashboard extends React.Component {
     this.openNewModal = this.openNewModal.bind(this);
     this.openEditModal = this.openEditModal.bind(this);
     this.createApplication = this.createApplication.bind(this);
+    this.deleteApplication = this.deleteApplication.bind(this);
   }
 
   openNewModal() {
@@ -86,7 +87,15 @@ class Dashboard extends React.Component {
       applications: applications,
       newModalToggle: 'hidden'
     })
+  }
 
+  deleteApplication(id) {
+    let applications = this.state.applications;
+    delete applications[id - 1];
+    this.setState({
+      editModalToggle: 'hidden',
+      applications: applications
+    });
   }
 
   render() {
@@ -120,6 +129,7 @@ class Dashboard extends React.Component {
         currentApplication={this.state.currentApplication}
         applications={this.state.applications}
         closeModal={this.closeModal}
+        deleteApplication={this.deleteApplication}
       ></EditModal> 
       <Applications 
           applications={this.state.applications}
