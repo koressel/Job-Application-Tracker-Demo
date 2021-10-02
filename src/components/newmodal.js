@@ -13,7 +13,6 @@ class NewModal extends React.Component {
 
         const formData = new FormData(document.querySelector('#new-application-form'));
         let data = {};
-        let appliedStatus, responseStatus, interviewStatus = false;
 
         for(var pair of formData.entries()) {
           switch(pair[0]) {
