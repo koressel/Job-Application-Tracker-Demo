@@ -79,14 +79,13 @@ class Dashboard extends React.Component {
   }
 
   createApplication(data) {
-    // get last id and increment 
+    data.id = this.state.applications.length + 1;
     const applications = this.state.applications;
     applications.push(data);
     this.setState({
       applications: applications,
       newModalToggle: 'hidden'
     })
-    console.log(this.state.applications)
 
   }
 

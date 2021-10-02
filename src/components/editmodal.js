@@ -5,6 +5,11 @@ class EditModal extends React.Component {
         super(props);
 
         this.handleCloseButtonClick = this.handleCloseButtonClick.bind(this);
+        this.handleDeleteButtonClick = this.handleDeleteButtonClick.bind(this);
+    }
+
+    handleDeleteButtonClick(e) {
+      
     }
 
     handleCloseButtonClick(e) {
@@ -58,7 +63,7 @@ class EditModal extends React.Component {
           <label htmlFor="notes">Notes</label><br/>
           <textarea id="edit-notes" name="notes" value={this.props.currentApplication.notes}></textarea>
           <button id="edit-submit-btn" type="submit">Save</button>
-          <button id="delete-btn" type="button">Delete</button>
+          <button id="delete-btn" type="button" onClick={this.handleDeleteButtonClick}>Delete</button>
         </div>
       </form>
       )

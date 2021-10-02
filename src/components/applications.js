@@ -54,7 +54,6 @@ class Applications extends React.Component {
                         {a.files.map((f, i) => {
                             return <a href={URL.createObjectURL(f)} target="_blank">{f.name}</a>
                         })}
-                        
                     </div>
                 }
                 return (
