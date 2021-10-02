@@ -82,7 +82,8 @@ class Dashboard extends React.Component {
     const applications = this.state.applications;
     applications.push(data);
     this.setState({
-      applications: applications
+      applications: applications,
+      newModalToggle: 'hidden'
     })
     console.log(this.state.applications)
 
