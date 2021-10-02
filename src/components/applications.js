@@ -13,9 +13,6 @@ class Applications extends React.Component {
     }
 
   render() {
-      let applied = false;
-      let response = false;
-      let interview = false;
       let apps = this.props.applications;
       apps.map((a, i) => {
         if (a.applied) {
@@ -43,6 +40,23 @@ class Applications extends React.Component {
         <div id="applications-container">
         <div id="flex-container">
             {apps.map((a, i) => {
+                let fileElems = [];
+                if (a.files === null) {
+                    fileElems = <div className="files-container">
+                    <h3>Files</h3>
+                    <a href="./files/Resume.pdf" target="_blank">Resume.pdf</a>
+                    <a href="./files/coverletter.pdf" target="_blank">CoverLetter.pdf</a>
+                </div>;
+                }
+                else {
+                    fileElems = <div className="files-container">
+                        <h3>Files</h3>
+                        {a.files.map((f, i) => {
+                            return <a href={URL.createObjectURL(f)} target="_blank">{f.name}</a>
+                        })}
+                        
+                    </div>
+                }
                 return (
                     <div className="applications" data-id={a.id}>
                     <h2>{a.position}</h2>
@@ -58,11 +72,7 @@ class Applications extends React.Component {
                         {a.interviewCheckbox}
                         <label htmlFor="interview-status">Interview</label>
                     </div>
-                    <div className="files-container">
-                        <h3>Files</h3>
-                        <a href="./files/Resume.pdf" target="_blank">Resume.pdf</a>
-                        <a href="./files/coverletter.pdf" target="_blank">CoverLetter.pdf</a>
-                    </div>
+                    {fileElems}
                     <h3>Notes</h3>
                     <div className="notes-container">
                         <p>{a.notes}&nbsp;</p>

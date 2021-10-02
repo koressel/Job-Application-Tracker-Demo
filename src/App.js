@@ -15,7 +15,7 @@ class Dashboard extends React.Component {
           position: "Tech Lead",
           company: "Dr. Martens",
           date: "2021-04-15",
-          filenames: "Resume.pdf, CoverLetter.pdf",
+          files: null,
           applied: true,
           response: true, 
           interview: false,
@@ -26,7 +26,7 @@ class Dashboard extends React.Component {
           position: "Software Engineer",
           company: "Comma.ai",
           date: "2021-04-16",
-          filenames: "Resume.pdf, CoverLetter.pdf",
+          files: null,
           applied: true,
           response: false, 
           interview: true,
@@ -37,7 +37,7 @@ class Dashboard extends React.Component {
           position: "Vulnerability Analyst",
           company: "YouTube",
           date: "2021-02-11",
-          filenames: "Resume.pdf, CoverLetter.pdf",
+          files: null,
           applied: true,
           response: true, 
           interview: false,
@@ -79,6 +79,7 @@ class Dashboard extends React.Component {
   }
 
   createApplication(data) {
+    // get last id and increment 
     const applications = this.state.applications;
     applications.push(data);
     this.setState({
