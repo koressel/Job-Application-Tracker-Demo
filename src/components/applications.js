@@ -60,8 +60,8 @@ class Applications extends React.Component {
                     </div>
                     <div className="files-container">
                         <h3>Files</h3>
-                        <a href="#">{a.filenames.substr(0, a.filenames.indexOf(","))}</a>
-                        <a href="#">{a.filenames.substring(a.filenames.indexOf(","))}</a>
+                        <a href="./files/Resume.pdf" target="_blank">Resume.pdf</a>
+                        <a href="./files/coverletter.pdf" target="_blank">CoverLetter.pdf</a>
                     </div>
                     <h3>Notes</h3>
                     <div className="notes-container">

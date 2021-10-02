@@ -49,8 +49,7 @@ class NewModal extends React.Component {
       if (!data.interview) {
         data.interview = false;
       }
-       console.log(data)
-      //  this.props.createApplication(data);
+       this.props.createApplication(data);
     }
 
     handleCloseButtonClick(e) {

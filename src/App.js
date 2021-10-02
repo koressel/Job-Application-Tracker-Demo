@@ -79,13 +79,12 @@ class Dashboard extends React.Component {
   }
 
   createApplication(data) {
-    
     const applications = this.state.applications;
-    // console.log(applications)
-    // applications.push(data);
-    // this.setState({
-    //   applications: applications
-    // })
+    applications.push(data);
+    this.setState({
+      applications: applications
+    })
+    console.log(this.state.applications)
 
   }
 
