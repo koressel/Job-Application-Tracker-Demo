@@ -99,7 +99,7 @@ class Dashboard extends React.Component {
     });
   }
 
-  updateApplication(id, data) {
+  updateApplication(data) {
     
   }
 

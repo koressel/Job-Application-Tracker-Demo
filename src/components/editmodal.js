@@ -4,9 +4,23 @@ class EditModal extends React.Component {
     constructor(props) {
         super(props);
 
+        this.state = {
+          position: '',
+          company: '',
+          date: '',
+          applied: false,
+          response: false,
+          interview: false,
+          notes: ''
+        }
+
         this.handleCloseButtonClick = this.handleCloseButtonClick.bind(this);
         this.handleDeleteButtonClick = this.handleDeleteButtonClick.bind(this);
         this.handleSubmitButtonClick = this.handleSubmitButtonClick.bind(this);
+        this.handlePositionInput = this.handlePositionInput.bind(this);
+        this.handleCompanyInput = this.handleCompanyInput.bind(this);
+        this.handleDateInput = this.handleDateInput.bind(this);
+        
     }
 
     handleDeleteButtonClick(e) {
@@ -23,12 +37,51 @@ class EditModal extends React.Component {
       // check for a difference, return, and close edit modal
       let formData = new FormData(document.querySelector('#edit-application-form'));
       let a = this.props.currentApplication;
-      console.log(formData);
+      
+      console.log(formData.get('position'));
       console.log(a)
+    }
+
+    componentDidUpdate(prevProps) {
+      if (this.props.toggle === 'show' && prevProps.toggle === 'hidden') {
+        this.handlePreFillModalInputsOnOpen();
+      }
+    }
+
+    handlePreFillModalInputsOnOpen() {
+      this.setState({
+        position: this.props.currentApplication.position,
+        company: this.props.currentApplication.company,
+        date: this.props.currentApplication.date,
+        applied: this.props.currentApplication.applied,
+        response: this.props.currentApplication.response,
+        interview: this.props.currentApplication.interview
+      })
+    }
+
+    handlePositionInput(e) {
+      this.setState({
+        position: e.target.value
+      })
+    }
+
+    handleCompanyInput(e) {
+      this.setState({
+        company: e.target.value
+      })
+    }
+
+    handleDateInput(e) {
+      console.log(this.state.date);
+      console.log(e.target.value)
+      this.setState({
+        date: e.target.value
+      })
     }
 
   render() {
       let app = this.props.currentApplication;
+      let position = app.position;
         if (app.applied) {
             app.appliedCheckbox = <input type="checkbox" className="status-cb"  id="edit-applied-status" name="applied-status" checked />;
         }
@@ -58,11 +111,11 @@ class EditModal extends React.Component {
           <hr/>
           <label htmlFor="position">Position</label>
           <span id="edit-id" className="hidden"></span>
-          <input type="text" id="edit-position" name="position" value={this.props.currentApplication.position}/>
+          <input type="text" id="edit-position" name="position" value={this.state.position} onChange={this.handlePositionInput}/>
           <label htmlFor="company">Company</label>
-          <input type="text" id="edit-company" name="company" value={this.props.currentApplication.company}/>
+          <input type="text" id="edit-company" name="company" value={this.state.company} onChange={this.handleCompanyInput}/>
           <label htmlFor="date">Date</label>
-          <input type="date" id="edit-date" name="date" value={this.props.currentApplication.date}/>
+          <input type="date" id="edit-date" name="date" value={this.state.date} onChange={this.handleDateInput}/>
           <div className="status-container">
               {app.appliedCheckbox}
             <label htmlFor="applied-status">Applied</label>
