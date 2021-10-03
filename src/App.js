@@ -53,6 +53,7 @@ class Dashboard extends React.Component {
     this.openEditModal = this.openEditModal.bind(this);
     this.createApplication = this.createApplication.bind(this);
     this.deleteApplication = this.deleteApplication.bind(this);
+    this.updateApplication = this.updateApplication.bind(this);
   }
 
   openNewModal() {
@@ -98,6 +99,10 @@ class Dashboard extends React.Component {
     });
   }
 
+  updateApplication(id, data) {
+    
+  }
+
   render() {
   
     return (
@@ -127,9 +132,9 @@ class Dashboard extends React.Component {
       <EditModal
         toggle={this.state.editModalToggle}
         currentApplication={this.state.currentApplication}
-        applications={this.state.applications}
         closeModal={this.closeModal}
         deleteApplication={this.deleteApplication}
+        updateApplication={this.updateApplication}
       ></EditModal> 
       <Applications 
           applications={this.state.applications}

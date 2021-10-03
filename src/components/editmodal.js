@@ -6,6 +6,7 @@ class EditModal extends React.Component {
 
         this.handleCloseButtonClick = this.handleCloseButtonClick.bind(this);
         this.handleDeleteButtonClick = this.handleDeleteButtonClick.bind(this);
+        this.handleSubmitButtonClick = this.handleSubmitButtonClick.bind(this);
     }
 
     handleDeleteButtonClick(e) {
@@ -14,6 +15,16 @@ class EditModal extends React.Component {
 
     handleCloseButtonClick(e) {
         this.props.closeModal('edit-modal');
+    }
+
+    handleSubmitButtonClick(e) {
+      e.preventDefault();
+
+      // check for a difference, return, and close edit modal
+      let formData = new FormData(document.querySelector('#edit-application-form'));
+      let a = this.props.currentApplication;
+      console.log(formData);
+      console.log(a)
     }
 
   render() {
@@ -62,7 +73,7 @@ class EditModal extends React.Component {
           </div>
           <label htmlFor="notes">Notes</label><br/>
           <textarea id="edit-notes" name="notes" value={this.props.currentApplication.notes}></textarea>
-          <button id="edit-submit-btn" type="submit">Save</button>
+          <button id="edit-submit-btn" type="submit" onClick={this.handleSubmitButtonClick}>Save</button>
           <button id="delete-btn" type="button" onClick={this.handleDeleteButtonClick}>Delete</button>
         </div>
       </form>
