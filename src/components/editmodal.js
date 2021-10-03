@@ -20,6 +20,9 @@ class EditModal extends React.Component {
         this.handlePositionInput = this.handlePositionInput.bind(this);
         this.handleCompanyInput = this.handleCompanyInput.bind(this);
         this.handleDateInput = this.handleDateInput.bind(this);
+        this.handleAppliedCheckbox = this.handleAppliedCheckbox.bind(this);
+        this.handleResponseCheckbox = this.handleResponseCheckbox.bind(this);
+        this.handleInterviewCheckbox = this.handleInterviewCheckbox.bind(this);
         
     }
 
@@ -72,37 +75,30 @@ class EditModal extends React.Component {
     }
 
     handleDateInput(e) {
-      console.log(this.state.date);
-      console.log(e.target.value)
       this.setState({
         date: e.target.value
       })
     }
 
+    handleAppliedCheckbox(e) {
+      this.setState({
+        applied: e.target.checked
+      })
+    }
+
+    handleResponseCheckbox(e) {
+      this.setState({
+        response: e.target.checked
+      })
+    }
+
+    handleInterviewCheckbox(e) {
+      this.setState({
+        interview: e.target.checked
+      })
+    }
+
   render() {
-      let app = this.props.currentApplication;
-      let position = app.position;
-        if (app.applied) {
-            app.appliedCheckbox = <input type="checkbox" className="status-cb"  id="edit-applied-status" name="applied-status" checked />;
-        }
-        else {
-            app.appliedCheckbox = <input type="checkbox" className="status-cb"  id="edit-applied-status" name="applied-status" />
-        }
-
-        if (app.response) {
-            app.responseCheckbox =  <input type="checkbox" className="status-cb"  id="edit-response-status" name="response-status" checked  />
-        }
-        else {
-            app.responseCheckbox = <input type="checkbox" className="status-cb"  id="edit-response-status" name="response-status" />
-        }
-
-        if (app.interview) {
-            app.interviewCheckbox =  <input type="checkbox" className="status-cb"  id="edit-interview-status" name="interview-status" checked />
-        }
-        else {
-            app.interviewCheckbox =  <input type="checkbox" className="status-cb"  id="edit-interview-status" name="interview-status" />
-        }
-
       return (
         <form id="edit-application-form" className={this.props.toggle + " modal input-form outline"} onSubmit="return false">
         <div id="edit-modal-content" className="modal-content">
@@ -117,11 +113,11 @@ class EditModal extends React.Component {
           <label htmlFor="date">Date</label>
           <input type="date" id="edit-date" name="date" value={this.state.date} onChange={this.handleDateInput}/>
           <div className="status-container">
-              {app.appliedCheckbox}
+            <input type="checkbox" className="status-cb"  id="edit-applied-status" name="applied-status" checked={this.state.applied} onChange={this.handleAppliedCheckbox}/>
             <label htmlFor="applied-status">Applied</label>
-            {app.responseCheckbox}
+            <input type="checkbox" className="status-cb"  id="edit-response-status" name="response-status" checked={this.state.response} onChange={this.handleResponseCheckbox} />
             <label htmlFor="response-status">Response</label>
-            {app.interviewCheckbox}
+            <input type="checkbox" className="status-cb"  id="edit-interview-status" name="interview-status" checked={this.state.interview} onChange={this.handleInterviewCheckbox} />
             <label htmlFor="interview-status">Interview</label>
           </div>
           <label htmlFor="notes">Notes</label><br/>
