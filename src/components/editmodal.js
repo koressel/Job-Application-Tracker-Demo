@@ -40,6 +40,7 @@ class EditModal extends React.Component {
 
       let formData = new FormData(document.querySelector('#edit-application-form'));
       let a = this.props.currentApplication;
+      let data = {};
       
       // convert checkbox values from 'on' and undefined to booleans
       if (!formData.get('applied')) {
@@ -62,65 +63,14 @@ class EditModal extends React.Component {
       }
 
       formData.append('id', this.props.currentApplication.id)
-      console.log(this.props.currentApplication)
+
+      // Map formData to a JSON object
+      formData.forEach((value, key) => data[key] = value);
+
       // formData.append('files', this.props.currentApplication.files);
       
-      
-      // compare formData to prop data and update if different
-      if (formData.get('position').localeCompare(a.position) !== 0) {
-        this.props.updateApplication(formData);
-        this.props.closeModal('edit-modal');
-      }
-      if (formData.get('company').localeCompare(a.company) !== 0) {
-        this.props.updateApplication(formData);
-        this.props.closeModal('edit-modal');
-      }
-      if (formData.get('date').localeCompare(a.date) !== 0) {
-        this.props.updateApplication(formData);
-        this.props.closeModal('edit-modal');
-      }
-      if (formData.get('applied') === 'true' ? true : false, a.applied) {
-        this.props.updateApplication(formData);
-        this.props.closeModal('edit-modal');
-      }
-      if (formData.get('response') === 'true' ? true : false, a.response) {
-        this.props.updateApplication(formData);
-        this.props.closeModal('edit-modal');
-      }
-      if (formData.get('interview') === 'true' ? true : false, a.interview) {
-        this.props.updateApplication(formData);
-        this.props.closeModal('edit-modal');
-      }
-      if (formData.get('notes').localeCompare(a.notes) !== 0) {
-        this.props.updateApplication(formData);
-        this.props.closeModal('edit-modal');
-      }
-
+      this.props.updateApplication(data);
       this.props.closeModal('edit-modal');
-    
-
-      // switch(formData) {
-      //   case (formData.get('position').localeCompare(a.position) !== 0):
-      //   case (formData.get('company').localeCompare(a.company) !== 0):
-      //   case (formData.get('date').localeCompare(a.date) !== 0):
-      //   case (formData.get('applied') !== a.applied):
-      //   case (formData.get('response') !== a.response):
-      //   case (formData.get('interview') !== a.interview):
-      //   case (formData.get('notes').localeCompare(a.notes) !== 0):
-      //     this.props.updateApplication(formData);
-      //     this.props.closeModal('edit-modal');
-      //     break;
-      //   default:
-      //     this.props.closeModal('edit-modal');
-      //     break;
-      // }
-
-      // log fd
-      // for (let p of formData.entries()) {
-      //   console.log(p[0], p[1])
-      // }
-
-      // console.log(a)
     }
 
     componentDidUpdate(prevProps) {

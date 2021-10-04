@@ -14,9 +14,6 @@ class Applications extends React.Component {
 
   render() {
       let apps = this.props.applications;
-      apps.map((a, i) => {
-
-      });
       return (
         <div id="applications-container">
         <div id="flex-container">

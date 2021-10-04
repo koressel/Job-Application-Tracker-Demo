@@ -100,16 +100,17 @@ class Dashboard extends React.Component {
   }
 
   updateApplication(data) {
-   // log fd
-  //  for (let p of data.entries()) {
-  //   console.log(p[0], p[1])
-  // }
+    console.log(data)
     let applications = this.state.applications;
-    delete applications[data.id];
-    applications.push(data);
-
+    let result = applications.map(obj => {
+      if (Number(data.id) === Number(obj.id)) {
+        return data;
+      }
+      return obj;
+    });
+    console.log("new State: ", result)
     this.setState({
-      applications: applications
+      applications: result
     })
   }
 
