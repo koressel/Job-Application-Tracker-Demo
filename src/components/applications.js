@@ -15,47 +15,28 @@ class Applications extends React.Component {
   render() {
       let apps = this.props.applications;
       apps.map((a, i) => {
-        if (a.applied) {
-            a.appliedCheckbox = <input type="checkbox" className="status-cb"  id="applied-status" name="applied-status" checked/>;
-        }
-        else {
-            a.appliedCheckbox = <input type="checkbox" className="status-cb"  id="applied-status" name="applied-status"/>;
-        }
 
-        if (a.response) {
-            a.responseCheckbox =   <input type="checkbox" className="status-cb"  id="response-status" name="response-status" checked/>;
-        }
-        else {
-            a.responseCheckbox = <input type="checkbox" className="status-cb"  id="response-status" name="response-status"/>;
-        }
-
-        if (a.interview) {
-            a.interviewCheckbox =   <input type="checkbox" className="status-cb"  id="interview-status" name="interview-status" checked/>;
-        }
-        else {
-            a.interviewCheckbox = <input type="checkbox" className="status-cb"  id="interview-status" name="interview-status"/>;
-        }
       });
       return (
         <div id="applications-container">
         <div id="flex-container">
             {apps.map((a, i) => {
-                let fileElems = [];
-                if (a.files == null) {
-                    fileElems = <div className="files-container">
-                    <h3>Files</h3>
-                    <a href="./files/Resume.pdf" target="_blank">Resume.pdf</a>
-                    <a href="./files/coverletter.pdf" target="_blank">CoverLetter.pdf</a>
-                </div>;
-                }
-                else {
-                    fileElems = <div className="files-container">
-                        <h3>Files</h3>
-                        {a.files.map((f, i) => {
-                            return <a href={URL.createObjectURL(f)} target="_blank">{f.name}</a>
-                        })}
-                    </div>
-                }
+                // let fileElems = [];
+                // if (a.files == null) {
+                //     fileElems = <div className="files-container">
+                //     <h3>Files</h3>
+                //     <a href="./files/Resume.pdf" target="_blank">Resume.pdf</a>
+                //     <a href="./files/coverletter.pdf" target="_blank">CoverLetter.pdf</a>
+                // </div>;
+                // }
+                // else {
+                //     fileElems = <div className="files-container">
+                //         <h3>Files</h3>
+                //         {a.files.map((f, i) => {
+                //             return <a href={URL.createObjectURL(f)} target="_blank">{f.name}</a>
+                //         })}
+                //     </div>
+                // }
                 return (
                     <div className="applications" data-id={a.id}>
                     <h2>{a.position}</h2>
@@ -64,14 +45,14 @@ class Applications extends React.Component {
                         {a.date}<span className="sub-text">&nbsp;Date Applied</span>
                     </p>
                     <div className="status-container">
-                       {a.appliedCheckbox}
+                    <input type="checkbox" className="status-cb"  id="applied-status" name="applied-status" checked={a.applied}/>;
                         <label htmlFor="applied-status">Applied</label>
-                        {a.responseCheckbox}
+                        <input type="checkbox" className="status-cb"  id="response-status" name="response-status" checked={a.response}/>;
                         <label htmlFor="response-status">Response</label>
-                        {a.interviewCheckbox}
+                        <input type="checkbox" className="status-cb"  id="interview-status" name="interview-status" checked={a.interview}/>;
                         <label htmlFor="interview-status">Interview</label>
                     </div>
-                    {fileElems}
+                    {/* {fileElems} */}
                     <h3>Notes</h3>
                     <div className="notes-container">
                         <p>{a.notes}&nbsp;</p>
@@ -80,7 +61,6 @@ class Applications extends React.Component {
                     </div>
                 )
             })}
-            
         </div>
       </div>
       )

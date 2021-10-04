@@ -137,7 +137,8 @@ class EditModal extends React.Component {
         date: this.props.currentApplication.date,
         applied: this.props.currentApplication.applied,
         response: this.props.currentApplication.response,
-        interview: this.props.currentApplication.interview
+        interview: this.props.currentApplication.interview,
+        notes: this.props.currentApplication.notes
       })
     }
 
