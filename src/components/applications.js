@@ -18,24 +18,9 @@ class Applications extends React.Component {
         <div id="applications-container">
         <div id="flex-container">
             {apps.map((a, i) => {
-                if (a.applied === 'true') {
-                    a.applied = true;
-                }
-                if (a.applied === 'false') {
-                    a.applied = false;
-                }
-                if (a.response === 'true') {
-                    a.response = true;
-                }
-                if (a.response === 'false') {
-                    a.response = false;
-                }
-                if (a.interview === 'true') {
-                    a.interview = true;
-                }
-                if (a.interview === 'false') {
-                    a.interview = false;
-                }
+                a.applied = JSON.parse(a.applied);
+                a.response = JSON.parse(a.response);
+                a.interview = JSON.parse(a.interview);
                 
                 // let fileElems = [];
                 // if (a.files == null) {
