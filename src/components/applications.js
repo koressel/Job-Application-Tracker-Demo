@@ -13,7 +13,15 @@ class Applications extends React.Component {
     }
 
   render() {
-      let apps = this.props.applications;
+      let apps = [];
+      console.log(this.props.applicationOrder)
+      if (this.props.applicationOrder === 'asc') {
+        apps = this.props.applications;
+      }
+      if (this.props.applicationOrder === 'desc') {
+        apps = this.props.applications.reverse();
+      }
+      console.log(apps)
       return (
         <div id="applications-container">
         <div id="flex-container">

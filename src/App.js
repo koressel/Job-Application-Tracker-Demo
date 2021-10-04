@@ -47,6 +47,7 @@ class Dashboard extends React.Component {
       currentApplication: {},
       newModalToggle: 'hidden',
       editModalToggle: 'hidden',
+      applicationOrder: 'asc'
     };
     this.closeModal = this.closeModal.bind(this);
     this.openNewModal = this.openNewModal.bind(this);
@@ -54,6 +55,7 @@ class Dashboard extends React.Component {
     this.createApplication = this.createApplication.bind(this);
     this.deleteApplication = this.deleteApplication.bind(this);
     this.updateApplication = this.updateApplication.bind(this);
+    this.handleOrderSelectChange = this.handleOrderSelectChange.bind(this);
   }
 
   openNewModal() {
@@ -114,6 +116,13 @@ class Dashboard extends React.Component {
     })
   }
 
+  handleOrderSelectChange(e) {
+    console.log('changed')
+    this.setState({
+      applicationOrder: e.target.value
+    })
+  }
+
   render() {
   
     return (
@@ -121,12 +130,9 @@ class Dashboard extends React.Component {
       <header>
         <h1>Job Applications</h1>
         <button id="open-new-modal-btn"className="nav-item" onClick={this.openNewModal}>Create New</button>
-        <p className="nav-item">Filter By <select id="filter">
-          <option>Date</option>
-          <option>Position</option>
-          <option>Applied</option>
-          <option>Response received</option>
-          <option>Interview offered</option>
+        <p className="nav-item">Order By <select id="filter" onChange={this.handleOrderSelectChange}>
+          <option value="asc">Date (Asc)</option>
+          <option value="desc">Date (Desc)</option>
         </select>
       </p>
       </header>
@@ -146,6 +152,7 @@ class Dashboard extends React.Component {
       <Applications 
           applications={this.state.applications}
           openEditModal={this.openEditModal}
+          applicationOrder={this.state.applicationOrder}
       ></Applications>
 
     </div>
