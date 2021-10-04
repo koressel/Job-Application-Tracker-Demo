@@ -41,7 +41,7 @@ class Applications extends React.Component {
         <div id="flex-container">
             {apps.map((a, i) => {
                 let fileElems = [];
-                if (a.files === null) {
+                if (a.files == null) {
                     fileElems = <div className="files-container">
                     <h3>Files</h3>
                     <a href="./files/Resume.pdf" target="_blank">Resume.pdf</a>
