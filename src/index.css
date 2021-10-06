@@ -36,11 +36,21 @@ hr {
   margin: 0 auto;
 }
 
+/* === Demo Note === */
+#demo-note {
+  text-align: center;
+  padding: .15em;
+}
+
 /* === Header === */
 header {
   background: white;
   padding: .5em;
   box-shadow: 1px 1px 4px rgb(158, 158, 158);
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 header h1 {
@@ -50,14 +60,14 @@ header h1 {
 
 header .nav-item {
   display: inline-block;
-  margin: 0 0 0 .5em;
+  margin: 0 0 0 .75em;
 }
 
 #open-new-modal-btn {
   border: 1px solid rgb(0, 199, 0);
   color: rgb(0, 199, 0);
   width: 9em;
-  margin: 1em 0 0 .5em;
+  margin: 0 0 0 .75em;
   background: white;
 }
 #open-new-modal-btn:hover {
