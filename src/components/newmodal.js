@@ -64,11 +64,11 @@ class NewModal extends React.Component {
           <h1>Create New</h1>
           <hr/>
           <label htmlFor="position">Position</label>
-          <input type="text" id="new-position" name="position" value="TEST"/>
+          <input type="text" id="new-position" name="position"/>
           <label htmlFor="company">Company</label>
-          <input type="text" id="new-company" name="company" value="TEST TEST"/>
+          <input type="text" id="new-company" name="company"/>
           <label htmlFor="date">Date</label>
-          <input type="date" id="new-date" name="date" value="2021-09-02"/>
+          <input type="date" id="new-date" name="date"/>
           <div className="status-container">
             <input type="checkbox" className="status-cb"  id="new-applied-status" name="applied" />
             <label htmlFor="applied">Applied</label>
@@ -81,7 +81,7 @@ class NewModal extends React.Component {
           <input id="new-upload" type="file" name="files" multiple/>
           <div id="fileNameOutput"></div>
           <label htmlFor="notes">Notes</label>
-          <textarea id="new-notes" name="notes">THIS IS A TEST</textarea>
+          <textarea id="new-notes" name="notes"></textarea>
           <button id="new-submit-btn" onClick={this.handleSubmitButtonClick}>Create</button>
         </div>
       </form> 
