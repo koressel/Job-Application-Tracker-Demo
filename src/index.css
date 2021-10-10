@@ -146,18 +146,26 @@ header .nav-item {
 /* === New Modal Content === */
 #new-modal-content {
   padding: 2em 3em 3em 3em;
+  text-align: left;
 }
 #new-modal-content label {
   font-size: 12pt;
 }
 #new-modal-content input[type=text], input[type=date], textarea, input[type=file] {
   display: block;
-  margin: .25em 0 .5em 0;
+  margin: .25em 0 .75em 0;
   width: 100%;
 }
 
+#new-modal-content .status-container label {
+  margin: 0 .75em 0 .15em;
+}
+#new-modal-content .status-container input[type=checkbox] {
+  margin: 0;
+}
+
 #new-modal-content .status-container {
-  margin: .5em 0 .25em 0;
+  margin: .75em 0 .75em 0;
 }
 
 #new-modal-content #close-new-modal-btn {
