@@ -23,8 +23,7 @@ class Applications extends React.Component {
       }
       console.log(apps)
       return (
-        <div id="applications-container">
-        <div id="flex-container">
+        <div className=" col-md-5 col-lg-3">
             {apps.map((a, i) => {
                 a.applied = JSON.parse(a.applied);
                 a.response = JSON.parse(a.response);
@@ -48,30 +47,29 @@ class Applications extends React.Component {
                 }
 
                 return (
-                    <div className="applications" data-id={a.id}>
-                    <h2>{a.position}</h2>
-                    <p className="company">{a.company}</p>
-                    <p className="date">
-                        {a.date}<span className="sub-text">&nbsp;Date Applied</span>
-                    </p>
-                    <div className="status-container">
-                    <input type="checkbox" className="status-cb"  id="applied-status" name="applied-status" checked={a.applied}/>;
-                        <label htmlFor="applied-status">Applied</label>
-                        <input type="checkbox" className="status-cb"  id="response-status" name="response-status" checked={a.response}/>;
-                        <label htmlFor="response-status">Response</label>
-                        <input type="checkbox" className="status-cb"  id="interview-status" name="interview-status" checked={a.interview}/>;
-                        <label htmlFor="interview-status">Interview</label>
-                    </div>
-                    {fileElems}
-                    <h3>Notes</h3>
-                    <div className="notes-container">
-                        <p>{a.notes}&nbsp;</p>
-                    </div>
-                    <button id="open-edit-modal-btn" className="edit-application-btn" onClick={this.handleEditButtonClick}>Edit</button>
-                    </div>
+                            <div className="applications" data-id={a.id}>
+                                <h2>{a.position}</h2>
+                                <p className="company">{a.company}</p>
+                                <p className="date">
+                                    {a.date}<span className="sub-text">&nbsp;Date Applied</span>
+                                </p>
+                                <div className="status-container">
+                                <input type="checkbox" className="status-cb"  id="applied-status" name="applied-status" checked={a.applied}/>;
+                                    <label htmlFor="applied-status">Applied</label>
+                                    <input type="checkbox" className="status-cb"  id="response-status" name="response-status" checked={a.response}/>;
+                                    <label htmlFor="response-status">Response</label>
+                                    <input type="checkbox" className="status-cb"  id="interview-status" name="interview-status" checked={a.interview}/>;
+                                    <label htmlFor="interview-status">Interview</label>
+                                </div>
+                                {fileElems}
+                                <h3>Notes</h3>
+                                <div className="notes-container">
+                                    <p>{a.notes}&nbsp;</p>
+                                </div>
+                                <button id="open-edit-modal-btn" className="edit-application-btn" onClick={this.handleEditButtonClick}>Edit</button>
+                                </div>
                 )
             })}
-        </div>
       </div>
       )
   }

@@ -39,7 +39,7 @@ hr {
 /* === Demo Note === */
 #demo-note {
   text-align: center;
-  padding: .15em;
+  padding: .5em .25em;
 }
 
 /* === Header === */
@@ -55,7 +55,7 @@ header {
 
 header h1 {
   display: inline-block;
-  font-size: 16pt;
+  font-size: 13pt;
 }
 
 header .nav-item {
@@ -263,10 +263,10 @@ header .nav-item {
 
 .applications {
   padding: 1em;
-  margin: .5em;
+  margin: .75em 0;
   border-radius: 2%;
   box-shadow: 1px 1px 4px rgb(158, 158, 158);
-  max-width: fit-content;
+  /* max-width: fit-content; */
   background: rgb(255, 255, 255);
 }
 
@@ -347,4 +347,8 @@ header .nav-item {
 }
 .applications .links-container a:hover {
   text-decoration: underline;
+}
+
+.applications .notes-container p {
+  overflow-y: scroll;
 }
