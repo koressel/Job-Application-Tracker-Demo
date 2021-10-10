@@ -137,11 +137,8 @@ header .nav-item {
   to {top:0; opacity:1}
 }
 
-
-
 .hidden {display: none;}
 .show {display: block;}
-
 
 /* === New Modal Content === */
 #new-modal-content {
