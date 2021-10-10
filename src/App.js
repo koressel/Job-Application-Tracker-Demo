@@ -14,7 +14,7 @@ class Dashboard extends React.Component {
           id: 1,
           position: "Tech Lead",
           company: "Dr. Martens",
-          date: "2021-04-15",
+          date: "2021-01-15",
           files: null,
           applied: true,
           response: true, 
@@ -25,7 +25,7 @@ class Dashboard extends React.Component {
           id: 2,
           position: "Software Engineer",
           company: "Comma.ai",
-          date: "2021-04-16",
+          date: "2021-01-18",
           files: null,
           applied: true,
           response: false, 
@@ -36,7 +36,7 @@ class Dashboard extends React.Component {
           id: 3,
           position: "Vulnerability Analyst",
           company: "YouTube",
-          date: "2021-02-11",
+          date: "2019-02-11",
           files: null,
           applied: true,
           response: true, 
@@ -47,7 +47,7 @@ class Dashboard extends React.Component {
       currentApplication: {},
       newModalToggle: 'hidden',
       editModalToggle: 'hidden',
-      applicationOrder: 'asc'
+      applicationOrder: 'desc'
     };
     this.closeModal = this.closeModal.bind(this);
     this.openNewModal = this.openNewModal.bind(this);
@@ -134,8 +134,8 @@ class Dashboard extends React.Component {
         <h1>Job Applications</h1>
         <button id="open-new-modal-btn"className="nav-item" onClick={this.openNewModal}>Create New</button>
         <p className="nav-item">Order By <select id="filter" onChange={this.handleOrderSelectChange}>
-          <option value="asc">Date (Asc)</option>
-          <option value="desc">Date (Desc)</option>
+          <option value="desc">Date (Newest)</option>
+          <option value="asc">Date (Oldest)</option>
         </select>
       </p>
       </header>

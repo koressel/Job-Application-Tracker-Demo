@@ -13,13 +13,13 @@ class Applications extends React.Component {
     }
 
   render() {
-      let apps = [];
+      let apps = this.props.applications;
       console.log(this.props.applicationOrder)
       if (this.props.applicationOrder === 'asc') {
-        apps = this.props.applications;
+        apps = apps.sort((a, b) => new Date (b.date) - new Date (a.date)).reverse();
       }
       if (this.props.applicationOrder === 'desc') {
-        apps = this.props.applications.reverse();
+        apps = apps.sort((a, b) => new Date (b.date) - new Date (a.date));
       }
       console.log(apps)
       return (
