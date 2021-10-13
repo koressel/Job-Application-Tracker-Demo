@@ -183,7 +183,8 @@ header .nav-item {
   border: 1px solid blue;
   color: blue;
   width: 9em;
-  margin: 1em 0 0 0;
+  display: block;
+  margin: 2em auto;
   background: white;
 }
 #new-modal-content #new-submit-btn:hover {
