@@ -113,7 +113,7 @@ header .nav-item {
   background-color: rgb(0,0,0);
   background-color: rgba(0,0,0,0.4);
 }
-.modal-content {
+.my-modal-content {
   position: relative;
   background-color: #fefefe;
   margin: auto;
@@ -173,6 +173,7 @@ header .nav-item {
   border: none;
   color: rgb(212, 0, 0);
   font-size: 20pt;
+  width: 45px;
 }
 #new-modal-content #close-new-modal-btn:hover {
   background: rgb(212, 0, 0);

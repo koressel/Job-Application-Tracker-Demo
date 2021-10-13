@@ -59,7 +59,7 @@ class NewModal extends React.Component {
   render() {
       return (
         <form id="new-application-form" className={this.props.toggle + " modal input-form outline"} name="newApplicationForm" >
-        <div id="new-modal-content" className="modal-content">
+        <div id="new-modal-content" className="my-modal-content">
           <button id="close-new-modal-btn" type="button" onClick={this.handleCloseButtonClick}>&times;</button>
           <h1>Create New</h1>
           <hr/>
