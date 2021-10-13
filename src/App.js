@@ -152,7 +152,7 @@ class Dashboard extends React.Component {
         deleteApplication={this.deleteApplication}
         updateApplication={this.updateApplication}
       ></EditModal> 
-      <div className="container-fluid">
+      <div className="container">
         <div className="row">
         <Applications 
           applications={this.state.applications}
