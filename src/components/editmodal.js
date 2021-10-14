@@ -137,7 +137,7 @@ class EditModal extends React.Component {
   render() {
       return (
         <form id="edit-application-form" className={this.props.toggle + " modal input-form outline"}>
-        <div id="edit-modal-content" className="modal-content">
+        <div id="edit-modal-content" className="my-modal-content">
           <button id="close-edit-modal-btn" type="button" onClick={this.handleCloseButtonClick}>&times;</button>
           <h1>Edit</h1>
           <hr/>
