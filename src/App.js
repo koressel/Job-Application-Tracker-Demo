@@ -130,6 +130,9 @@ class Dashboard extends React.Component {
         <div id="demo-note">
           <p>This is just a demo. Go to <a href="https://github.com/koressel/Job-Application-Tracker" target="_blank">github.com/koressel/job-application-tracker</a> to download and learn more.</p>
         </div>
+        {
+          // TODO : Containerize header
+        }
       <header>
         <h1>Job Applications</h1>
         <button id="open-new-modal-btn"className="nav-item" onClick={this.openNewModal}>Create New</button>
