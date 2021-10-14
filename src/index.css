@@ -75,25 +75,6 @@ header .nav-item {
   color: white;
 }
 
-#search-container {
-  display: inline-block;
-  position: relative;
-  width: 210px;
-  margin: 0 0 0 1em;
-  padding: 0;
-  height: 16px;
-}
-#search-container input[type=text] {
-  position: absolute;
-  top: 0;
-  left:0;
-}
-#search-container i {
-  position: absolute;
-  top: 3.5px;
-  color: rgb(82, 82, 82);
-  right:0;
-}
 
 /* === Input Forms === */
 
