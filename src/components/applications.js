@@ -13,8 +13,6 @@ class Applications extends React.Component {
     }
 
   render() {
-
-    // TODO : Fix application rendering errors
       let apps = this.props.applications;
       console.log("Apps",apps, Object.prototype.toString.call(apps) == '[object Array]')
       if (this.props.applicationOrder === 'asc') {

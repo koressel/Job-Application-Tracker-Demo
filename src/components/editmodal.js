@@ -158,6 +158,9 @@ class EditModal extends React.Component {
           </div>
           <label htmlFor="notes">Notes</label><br/>
           <textarea id="edit-notes" name="notes" value={this.state.notes} onChange={this.handleNotesTextarea}></textarea>
+          {
+          // TODO : add centered button container
+          }
           <button id="edit-submit-btn" type="submit" onClick={this.handleSubmitButtonClick}>Save</button>
           <button id="delete-btn" type="button" onClick={this.handleDeleteButtonClick}>Delete</button>
         </div>
