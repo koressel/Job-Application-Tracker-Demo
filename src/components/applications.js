@@ -70,7 +70,7 @@ class Applications extends React.Component {
       });
       console.log("App Elements",appElements, Object.prototype.toString.call(appElements) == '[object Array]')
       return (
-          <appElements/>
+        appElements
        )
   }
 }
