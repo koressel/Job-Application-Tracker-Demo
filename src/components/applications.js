@@ -43,7 +43,7 @@ class Applications extends React.Component {
             </div>
         }
         return (
-            <div className="col col-sm-12 col-md-5 col-lg-3">
+            <div className="col-sm-12 col-md-6 col-lg-4">
             <div className="applications" data-id={app.id}>
                 <h2>{app.position}</h2>
                 <p className="company">{app.company}</p>
