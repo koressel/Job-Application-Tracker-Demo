@@ -198,7 +198,6 @@ header .nav-item {
   border: 1px solid blue;
   color: blue;
   width: 9em;
-  margin: 1em 0 0 0;
   background: white;
 }
 #edit-modal-content #edit-submit-btn:hover {
@@ -210,7 +209,6 @@ header .nav-item {
   border: 1px solid rgb(212, 0, 0);
   color: rgb(212, 0, 0);
   width: 9em;
-  margin: 1em 0 0 0;
   background: white;
 }
 #edit-modal-content #delete-btn:hover {
@@ -229,6 +227,10 @@ header .nav-item {
 #edit-modal-content #close-edit-modal-btn:hover {
   background: rgb(212, 0, 0);
   color: white;
+}
+
+#edit-modal-content #edit-buttons-container {
+  text-align: center;
 }
 
 /* === Applications === */
@@ -330,4 +332,18 @@ header .nav-item {
 
 .applications .notes-container p {
   overflow-y: scroll;
+}
+
+@media (max-width: 449px) {
+  #edit-buttons-container #edit-submit-btn {
+    margin: .5em 0;
+  }
+  #edit-buttons-container #delete-btn {
+    margin: .5em 0;
+  }
+}
+@media (min-width: 450px) {
+  #edit-buttons-container button #edit-submit-btn,#delete-btn {
+    margin: 1em 1em 0 1em;
+  }
 }
