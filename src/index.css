@@ -123,6 +123,7 @@ header .nav-item {
 #new-modal-content {
   padding: 2em 3em 3em 3em;
   text-align: left;
+  max-width: 500px;
 }
 #new-modal-content label {
   font-size: 12pt;
@@ -175,6 +176,7 @@ header .nav-item {
 #edit-modal-content {
   padding: 2em 3em 3em 3em;
   text-align: left;
+  max-width: 500px;
 }
 #edit-modal-content label {
   font-size: 12pt;
