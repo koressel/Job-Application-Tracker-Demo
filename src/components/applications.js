@@ -49,11 +49,11 @@ class Applications extends React.Component {
                     {app.date}<span className="sub-text">&nbsp;Date Applied</span>
                 </p>
                 <div className="status-container">
-                <input type="checkbox" className="status-cb"  id="applied-status" name="applied-status" checked={JSON.parse(app.applied)}/>;
+                <input type="checkbox" className="status-cb"  id="applied-status" name="applied-status" checked={JSON.parse(app.applied)}/>
                     <label htmlFor="applied-status">Applied</label>
-                    <input type="checkbox" className="status-cb"  id="response-status" name="response-status" checked={JSON.parse(app.response)}/>;
+                    <input type="checkbox" className="status-cb"  id="response-status" name="response-status" checked={JSON.parse(app.response)}/>
                     <label htmlFor="response-status">Response</label>
-                    <input type="checkbox" className="status-cb"  id="interview-status" name="interview-status" checked={JSON.parse(app.interview)}/>;
+                    <input type="checkbox" className="status-cb"  id="interview-status" name="interview-status" checked={JSON.parse(app.interview)}/>
                     <label htmlFor="interview-status">Interview</label>
                 </div>
                 {fileElems}

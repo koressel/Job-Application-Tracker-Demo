@@ -265,7 +265,7 @@ header .nav-item {
 }
 .status-container label {
   padding: 0;
-  margin: 0 .15em 0 -.15em;
+  margin: 0 .25em 0 .15em;
 }
 .status-container #applied-status, #response-status, #interview-status {
   display: inline-block;
