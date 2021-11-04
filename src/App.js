@@ -42,6 +42,39 @@ class Dashboard extends React.Component {
           response: true, 
           interview: false,
           notes: ""
+        },
+        {
+          id: 4,
+          position: "Scrum Master",
+          company: "Cardano",
+          date: "2018-06-22",
+          files: null,
+          applied: true,
+          response: true, 
+          interview: true,
+          notes: "- Email CV to hiring manager"
+        },
+        {
+          id: 5,
+          position: "Full Stack Developer",
+          company: "Honda Motor Company",
+          date: "2018-03-10",
+          files: null,
+          applied: true,
+          response: true, 
+          interview: true,
+          notes: "- Video call at 11am on Thursday"
+        },
+        {
+          id: 6,
+          position: "Back End Developer II",
+          company: "Amazon Web Services Inc.",
+          date: "2018-01-29",
+          files: null,
+          applied: true,
+          response: true, 
+          interview: false,
+          notes: ""
         }
       ],
       currentApplication: {},
